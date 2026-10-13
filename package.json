@@ -1,0 +1,22 @@
+{
+  "name": "@panasms/module-integration-widgets",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "@mdi/js": "^7.4.47",
+    "@radix-ui/react-dialog": "^1.1.23",
+    "@tanstack/react-query": "^5.103.1",
+    "react": "^19.3.0",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@panasms/module-sdk": "https://github.com/PaNasMs/module-sdk/archive/7b5d34b86f85cdc6187fed10dab9a464d3663964.tar.gz",
+    "@types/react": "^19.3.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.0"
+  }
+}

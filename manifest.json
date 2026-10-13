@@ -1,0 +1,25 @@
+{
+  "id": "integration-widgets",
+  "title": "Integration Widgets Pack",
+  "description": "Read-only desktop widgets for Proxmox, Synology DSM and Home Assistant.",
+  "version": "0.1.0",
+  "api": 1,
+  "core": ">=0.2.27,<0.3.0",
+  "architecture": "arm64",
+  "signer": "panasms-ci",
+  "service": "bin/server",
+  "memberAccess": true,
+  "widgets": {
+    "integration-widgets:proxmox": [2, 2],
+    "integration-widgets:synology": [2, 2],
+    "integration-widgets:home-assistant": [2, 2]
+  },
+  "dependencies": {},
+  "packages": { "libc6": "2.34" },
+  "license": "SUL-1.0",
+  "translations": {
+    "en": { "title": "Integration Widgets Pack", "description": "Read-only desktop widgets for Proxmox, Synology DSM and Home Assistant." },
+    "ru": { "title": "Набор интеграционных виджетов", "description": "Виджеты рабочего стола для Proxmox, Synology DSM и Home Assistant." },
+    "uk": { "title": "Набір інтеграційних віджетів", "description": "Віджети робочого столу для Proxmox, Synology DSM і Home Assistant." }
+  }
+}
