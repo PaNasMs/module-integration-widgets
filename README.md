@@ -2,6 +2,8 @@
 
 Read-only desktop cards for Proxmox VE, Synology DSM, and Home Assistant. Administrators create named connections under Settings → Integration widgets. Each desktop tile chooses one connection and its own display options. Multiple tiles may use the same or different connections.
 
+Version 0.1 grants access to these widgets only to PaNasMs administrators. Shared access to selected connections and Home Assistant entities requires an explicit permissions model in a later release.
+
 Credentials are stored in the module's AES-GCM encrypted state at `/var/lib/panasms-integration-widgets` and never returned to the browser. The module verifies TLS certificates by default. The explicit self-signed option disables certificate verification for that connection.
 
 Proxmox uses a PVE API token with permission to read cluster resources. Home Assistant uses a long-lived access token. Synology uses a DSM account to establish a short-lived API session. Create dedicated accounts and grant only the permissions required for the selected metrics. Home Assistant long-lived tokens inherit the account's permissions and are not restricted to individual entities.

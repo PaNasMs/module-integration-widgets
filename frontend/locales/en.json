@@ -25,6 +25,7 @@
   "chooseConnection": "Choose a connection",
   "configure": "Choose the service and data for this card.",
   "notConfigured": "Choose a connection in desktop edit mode.",
+  "adminOnly": "Only administrators can view integration data.",
   "unavailable": "Service unavailable",
   "authenticationFailed": "Authentication failed",
   "metricUnavailable": "Metric unavailable",
