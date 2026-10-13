@@ -826,4 +826,4 @@ registerModule({
       ),
     },
   },
-} as unknown as Parameters<typeof registerModule>[0]);
+});
