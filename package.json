@@ -14,7 +14,7 @@
     "react-router-dom": "^7.18.4"
   },
   "devDependencies": {
-    "@panasms/module-sdk": "https://github.com/PaNasMs/module-sdk/archive/7b5d34b86f85cdc6187fed10dab9a464d3663964.tar.gz",
+    "@panasms/module-sdk": "https://github.com/PaNasMs/module-sdk/archive/2e68fe38261c626df5ec394d2a5b30dd1e3f454a.tar.gz",
     "@types/react": "^19.3.0",
     "typescript": "^5.9.3",
     "vite": "^8.3.0"
