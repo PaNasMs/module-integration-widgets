@@ -51,6 +51,10 @@ func (s *Service) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	admin := r.Header.Get("X-PaNasMs-Role") == "admin"
 	switch {
 	case path == "connections" && r.Method == http.MethodGet:
+		if !admin {
+			problem(w, 403, "Administrator permissions required")
+			return
+		}
 		s.mu.Lock()
 		list := make([]publicConnection, 0, len(s.connections))
 		for _, c := range s.connections {
@@ -164,6 +168,10 @@ func (s *Service) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 		respond(w, 200, map[string]bool{"deleted": true})
 	case path == "snapshot" && r.Method == http.MethodGet:
+		if !admin {
+			problem(w, 403, "Administrator permissions required")
+			return
+		}
 		id := r.URL.Query().Get("id")
 		s.mu.Lock()
 		var c Connection

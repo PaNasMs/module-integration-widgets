@@ -36,6 +36,14 @@ func TestConnectionsAreEncryptedAndAdminOnly(t *testing.T) {
 	if strings.Contains(response.Body.String(), "private-token") {
 		t.Fatal("secret in response")
 	}
+	for _, path := range []string{"/connections", "/snapshot?id=" + service.connections[0].ID} {
+		request = httptest.NewRequest("GET", path, nil)
+		response = httptest.NewRecorder()
+		service.ServeHTTP(response, request)
+		if response.Code != 403 {
+			t.Fatalf("member read %s: %d", path, response.Code)
+		}
+	}
 	raw, err := os.ReadFile(filepath.Join(root, "connections.enc"))
 	if err != nil {
 		t.Fatal(err)

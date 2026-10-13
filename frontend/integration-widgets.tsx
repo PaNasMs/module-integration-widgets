@@ -133,6 +133,10 @@ function Card({
     : undefined;
   const status = !config.connectionId
     ? tr("notConfigured")
+    : all.error
+      ? all.error.message === "Administrator permissions required"
+        ? tr("adminOnly")
+        : tr("unavailable")
     : !connection && !all.isPending
       ? tr("notConfigured")
       : data.error
