@@ -102,6 +102,7 @@
   display: flex;
   gap: 16px;
   font-size: 11px;
+  line-height: 14px;
 }
 .integration-synology-summary span {
   color: var(--mute);
@@ -122,6 +123,7 @@
   grid-template-columns: minmax(0, auto) minmax(32px, 1fr) auto;
   align-items: center;
   column-gap: 7px;
+  line-height: 14px;
 }
 .integration-volume-id {
   max-width: 100px;
@@ -183,6 +185,7 @@
   margin-top: auto;
   color: var(--mute);
   font-size: 9px;
+  line-height: 12px;
 }
 .integration-settings {
   padding: 20px;
