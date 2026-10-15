@@ -61,8 +61,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
-.integration-meter > div,
-.integration-volume > div {
+.integration-meter > div {
   display: flex;
   justify-content: space-between;
   gap: 5px;
@@ -112,15 +111,36 @@
   margin-left: 4px;
 }
 .integration-volumes {
-  overflow-y: auto;
   min-height: 0;
-  flex: 1;
   display: grid;
   align-content: start;
-  gap: 7px;
+  gap: 3px;
 }
 .integration-volume {
   min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(32px, 1fr) auto;
+  align-items: center;
+  column-gap: 7px;
+}
+.integration-volume-id {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px;
+}
+.integration-volume progress {
+  height: 5px;
+  margin: 0;
+}
+.integration-volume small {
+  grid-column: 1 / -1;
+  line-height: 12px;
+}
+.integration-volume-overflow {
+  color: var(--mute);
+  font-size: 10px;
 }
 .integration-volume.warning progress::-webkit-progress-value {
   background: var(--warn);

@@ -128,6 +128,8 @@ function Card({
   const volumes = (data.data?.volumes ?? []).filter(
     (volume) => !selectedVolumes?.length || selectedVolumes.includes(volume.id),
   );
+  const displayedVolumes = volumes.slice(0, 3);
+  const hiddenVolumeCount = volumes.length - displayedVolumes.length;
   const memoryPercent = data.data?.memoryTotal
     ? (data.data.memoryUsed! / data.data.memoryTotal) * 100
     : undefined;
@@ -244,24 +246,24 @@ function Card({
           </div>
           <div className="integration-volumes" aria-label={tr("volumes")}>
             {volumes.length ? (
-              volumes.map((volume) => (
+              displayedVolumes.map((volume) => (
                 <div
                   className={`integration-volume ${(volume.total > 0 && volume.used / volume.total >= 0.8) || volume.status !== "normal" ? "warning" : ""}`}
                   key={volume.id}
                 >
-                  <div>
-                    <span>{volume.id}</span>
-                    <strong>
-                      {volume.total
-                        ? `${Math.round((volume.used / volume.total) * 100)}%`
-                        : "—"}
-                    </strong>
-                  </div>
+                  <span className="integration-volume-id" title={volume.id}>
+                    {volume.id}
+                  </span>
                   <progress
                     max={volume.total || 1}
                     value={volume.used}
                     aria-label={volume.id}
                   />
+                  <strong>
+                    {volume.total
+                      ? `${Math.round((volume.used / volume.total) * 100)}%`
+                      : "—"}
+                  </strong>
                   <small>
                     {volume.total
                       ? `${bytes(volume.used)} / ${bytes(volume.total)}`
@@ -272,6 +274,11 @@ function Card({
               ))
             ) : (
               <p className="muted">{tr("noVolumes")}</p>
+            )}
+            {hiddenVolumeCount > 0 && (
+              <span className="integration-volume-overflow" title={tr("selectVolumes")}>
+                {tr("moreVolumes", { count: hiddenVolumeCount })}
+              </span>
             )}
           </div>
         </>

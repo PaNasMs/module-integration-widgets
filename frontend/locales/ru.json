@@ -39,6 +39,7 @@
   "allVolumes": "Все тома",
   "selectVolumes": "Выберите тома для показа",
   "noVolumes": "Данные о томах недоступны",
+  "moreVolumes": "+{{count}} томов",
   "primary": "Основная сущность",
   "secondary": "Вторая сущность",
   "tertiary": "Третья сущность",

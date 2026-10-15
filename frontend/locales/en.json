@@ -39,6 +39,7 @@
   "allVolumes": "All volumes",
   "selectVolumes": "Select volumes to show",
   "noVolumes": "No volumes reported",
+  "moreVolumes": "+{{count}} more volumes",
   "primary": "Main entity ID",
   "secondary": "Second entity ID",
   "tertiary": "Third entity ID",
