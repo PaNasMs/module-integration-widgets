@@ -567,6 +567,7 @@ function Settings() {
               <div className="actions">
                 <Button
                   disabled={save.isPending || testConnection.isPending}
+                  data-dialog-cancel
                   onClick={() => setForm(null)}
                 >
                   {tr("cancel")}
